@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisch Bosch</title>
+</head>
+<body>
+    <h1>Bisch Bosch</h1>
+    <!-- Resultatet.. -->
+    <div id="result"></div>
+    <script>
+        const limit = 100;  // Maximum number
+        const resultDiv = document.getElementById('result');  // Hämta div där resultatet ska visas
+        for (let i = 1; i <= limit; i++) {
+            let output = "";
+            if (i % 3 === 0 && i % 4 === 0) {
+                output = "Bisch-Bosch";
+            } else if (i % 3 === 0) {
+                output = "Bisch";
+            } else if (i % 4 === 0) {
+                output = "Bosch";
+            } else {
+                output = i;
+            }
+            // Nytt p-element för varje res., lägg till i DOM
+            let newElement = document.createElement("p");
+            newElement.innerText = output;
+            resultDiv.appendChild(newElement);
+        }
+    </script>
+    <footer>
+        <p>src: dspalgoswe</p>
+    </footer>
+</body>
+</html>
